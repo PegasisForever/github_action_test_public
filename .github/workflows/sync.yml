@@ -11,9 +11,9 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: sync
         run: |
-          cd $GITHUB_WORKSPACE
+          git clone --branch main https://PegasisForever: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@github.com/PegasisForever/github_action_test.git
+          cd github_action_test
           git status
           git push https://PegasisForever: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@github.com/PegasisForever/github_action_test_public.git --set-upstream main
