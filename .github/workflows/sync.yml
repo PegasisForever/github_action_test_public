@@ -1,0 +1,19 @@
+name: Sync to personal
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: sync
+        run: |
+          cd $GITHUB_WORKSPACE
+          git remote add destination https://PegasisForever:$REPO_SYNC_TOKEN@github.com/PegasisForever/github_action_test_public.git
+          git push destination main
