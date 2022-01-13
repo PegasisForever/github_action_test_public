@@ -15,5 +15,5 @@ jobs:
       - name: sync
         run: |
           cd $GITHUB_WORKSPACE
-          git remote add destination https://PegasisForever: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@github.com/PegasisForever/github_action_test_public.git
-          git push destination main
+          git status
+          git push https://PegasisForever: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@github.com/PegasisForever/github_action_test_public.git --set-upstream main
